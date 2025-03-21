@@ -1,12 +1,15 @@
 import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 function ImageLandingPage() {
-  const imageSrc = '/images/building.jpg';
-  const imageTitle = 'Building';
-  const imageDescription =
-    'This is a dummy description about the building image which is part of the portfolio.';
+  const location = useLocation();
+  const { src } = location.state || { src: '/images/building.jpg' };
+
+  // Extract the filename (without extension) as the title
+  const fileName = src.substring(src.lastIndexOf('/') + 1);
+  const title = fileName.split('.')[0];
+  const description = `This is the ${title} image.`;
 
   return (
     <Container fluid style={{ backgroundColor: 'black', minHeight: '100vh' }}>
@@ -26,7 +29,7 @@ function ImageLandingPage() {
                   fontSize: '24px'
                 }}
               >
-                {imageTitle}
+                {title}
               </div>
             </Col>
           </Row>
@@ -34,7 +37,7 @@ function ImageLandingPage() {
           <Row>
             <Col>
               <Image
-                src={imageSrc}
+                src={src}
                 thumbnail
                 style={{ border: 'none', padding: 0 }}
               />
@@ -51,7 +54,7 @@ function ImageLandingPage() {
               marginTop: '45px'
             }}
           >
-            {imageDescription}
+            {description}
           </div>
         </Col>
       </Row>

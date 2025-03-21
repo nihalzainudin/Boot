@@ -11,18 +11,18 @@ function AboutPage() {
       <Row style={{ height: '35px' }}></Row>
       {/* Two vertical grids */}
       <Row>
-        {/* Left Grid: 7 columns – Artist Statement */}
+        {/* Left Grid: 7 columns – About */}
         <Col md={7}>
           <div style={{ color: 'white', padding: '15px', fontFamily: 'Garamond' }}>
-            {/* Artist Statement heading more bold */}
+            {/* About heading updated */}
             <h2 style={{ textAlign: 'left', fontSize: '120%', fontWeight: '900' }}>
-              Artist Statement
+              About
             </h2>
             {/* Increased padding between heading and description */}
-            <p style={{ textAlign: 'left', fontSize: '100%', marginTop: '35px' }}>
+            <p style={{ textAlign: 'justify', fontSize: '100%', marginTop: '35px' }}>
               ABC is a multidisciplinary documentary artist whose work explores the intricate spaces between individuals and their belief systems. Using binaural audio works and photography as her primary mediums, she creates immersive narratives that investigate identity, connection, and dissonance. Driven by a commitment to amplifying the voices of marginalized communities, her projects shed light on a wide spectrum of socio-political issues. Through her powerful storytelling, ABC invites audiences to engage with perspectives often overlooked, fostering empathy, reflection, and dialogue.
             </p>
-            <p style={{ textAlign: 'left', fontSize: '100%', marginTop: '20px' }}>
+            <p style={{ textAlign: 'justify', fontSize: '100%', marginTop: '20px' }}>
               <em>Mentorships + Awards + Prizes:</em>
               <br />
               National Fresh Voices Artivism Award - Nominee
@@ -33,7 +33,7 @@ function AboutPage() {
               <br />
               Canada Graduate Scholarship - SSHRC
             </p>
-            <p style={{ textAlign: 'left', fontSize: '100%', marginTop: '20px' }}>
+            <p style={{ textAlign: 'justify', fontSize: '100%', marginTop: '20px' }}>
               <em>Filmography:</em>
               <br />
               2025 | The Scale of Loss | 6 min | HD 4:3 | Stereo

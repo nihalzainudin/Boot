@@ -21,7 +21,7 @@ function HomePage() {
       <Row className="g-2">
         {images.map((src, idx) => (
           <Col key={idx} xs={6} md={4}>
-            <Link to="/image">
+            <Link to="/image" state={{ src }}>
               <Image src={src} thumbnail style={{ border: 'none', padding: 0 }} />
             </Link>
           </Col>
