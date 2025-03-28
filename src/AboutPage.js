@@ -36,13 +36,17 @@ function AboutPage() {
             <p style={{ textAlign: 'justify', fontSize: '100%', marginTop: '20px' }}>
               <em>Filmography:</em>
               <br />
+              2025 | Thalaimarai | TBD
+              <br />
               2025 | The Scale of Loss | 6 min | HD 4:3 | Stereo
               <br />
               2024 | Kaazhcha | 6:40 min | Surround 5.1
               <br />
+              2023 | Lives of Hastings | Visual Arts | HD 1.85 |  Stereo
+              <br />
               2022 | Al - Jumuah | 7 min | HD 16:9  | Stereo
               <br />
-              2021 | Bliss | 2:31 min | 8mm | Stereo
+              2020 | Synthetic Syndrome | 2:31min | 8mm | Stereo
             </p>
           </div>
         </Col>
