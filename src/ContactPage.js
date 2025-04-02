@@ -14,21 +14,27 @@ function ContactPage() {
     message: false,
   });
 
+  // Reduced size styles for input fields and message box
   const inputStyle = {
     backgroundColor: 'transparent',
     border: '2px solid rgba(255,255,255,0.3)',
     color: 'white',
     borderRadius: '5px',
-    padding: '8px 10px',
+    padding: '4px 6px',       // Reduced padding
+    fontSize: '14px',         // Reduced font size
     transition: 'all 0.3s ease'
   };
 
-  // Style override if error is present
   const errorStyle = {
     border: '2px solid red'
   };
 
-  const messageStyle = { ...inputStyle, height: '230px', color: 'rgba(255,255,255,0.8)' };
+  const messageStyle = { 
+    ...inputStyle, 
+    height: '200px',          // Reduced height for message box
+    width: '80%',             // Reduced width for message box
+    color: 'rgba(255,255,255,0.8)'
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,19 +45,16 @@ function ContactPage() {
     };
     setErrors(newErrors);
 
-    // If any required field is missing, return early
     if (newErrors.firstName || newErrors.email || newErrors.message) {
       return;
     }
 
-    // Build the template parameters for EmailJS
     const templateParams = {
-      name: `${firstName} ${lastName}`,  // Combined sender's name
-      email: email,                      // Sender's email address
+      name: `${firstName} ${lastName}`,
+      email: email,
       message: message,
     };
 
-    // Send email using EmailJS
     emailjs
       .send(
         'service_6txhiit',
@@ -62,7 +65,6 @@ function ContactPage() {
       .then(
         (response) => {
           console.log('SUCCESS!', response.status, response.text);
-          // Clear the form fields on success
           setFirstName('');
           setLastName('');
           setEmail('');
@@ -77,8 +79,7 @@ function ContactPage() {
   };
 
   return (
-    <Container fluid style={{ backgroundColor: 'black', minHeight: '100vh' }}>
-      {/* Embedded CSS for styling */}
+    <Container fluid style={{ backgroundColor: 'transparent', minHeight: '100vh' }}>
       <style>
         {`
           .contact-input::placeholder {
@@ -96,6 +97,8 @@ function ContactPage() {
             border: 2px solid rgba(255,255,255,0.6);
             background-color: transparent;
             box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            padding: 4px 10px;       /* Reduced padding for smaller button */
+            font-size: 14px;         /* Reduced font size */
           }
           .modern-button:hover {
             background-color: rgba(255,255,255,0.15);
@@ -104,9 +107,7 @@ function ContactPage() {
           }
         `}
       </style>
-      {/* Top padding */}
       <Row style={{ height: '35px' }}></Row>
-      {/* Page title */}
       <Row>
         <Col>
           <div style={{ color: 'white', padding: '15px', fontFamily: 'Garamond' }}>
@@ -114,7 +115,6 @@ function ContactPage() {
           </div>
         </Col>
       </Row>
-      {/* Page description */}
       <Row>
         <Col>
           <div style={{ color: 'white', padding: '0 15px', fontFamily: 'Garamond' }}>
@@ -124,13 +124,11 @@ function ContactPage() {
           </div>
         </Col>
       </Row>
-      {/* Contact Form */}
       <Row>
         <Col>
           <div style={{ padding: '0 15px', fontFamily: 'Garamond' }}>
             <Form style={{ marginTop: '15px' }} onSubmit={handleSubmit}>
               <Row>
-                {/* Left Column: First Name, Last Name, Email Address */}
                 <Col md={6}>
                   <Form.Group controlId="contactFirstName" className="mb-3">
                     <Form.Label style={{ color: 'white' }}>First Name *</Form.Label>
@@ -166,7 +164,6 @@ function ContactPage() {
                     />
                   </Form.Group>
                 </Col>
-                {/* Right Column: Message and Send Button */}
                 <Col md={6}>
                   <Form.Group controlId="contactMessage" className="mb-3">
                     <Form.Label style={{ color: 'white' }}>Message *</Form.Label>
@@ -179,7 +176,7 @@ function ContactPage() {
                       className="contact-input"
                     />
                   </Form.Group>
-                  <div style={{ textAlign: 'right', marginTop: '10px' }}>
+                  <div style={{ textAlign: 'right', marginTop: '10px', paddingRight: '95px' }}>
                     <Button
                       variant="outline-light"
                       type="submit"
@@ -194,7 +191,6 @@ function ContactPage() {
           </div>
         </Col>
       </Row>
-      {/* Additional content can be added here */}
     </Container>
   );
 }

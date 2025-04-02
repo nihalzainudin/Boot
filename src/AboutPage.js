@@ -5,7 +5,7 @@ function AboutPage() {
   return (
     <Container
       fluid
-      style={{ backgroundColor: 'black', minHeight: '100vh' }}
+      style={{ backgroundColor: 'transparent', minHeight: '100vh' }}
     >
       {/* Padding row same as above the artist name */}
       <Row style={{ height: '35px' }}></Row>
@@ -32,21 +32,6 @@ function AboutPage() {
               Michael .J. Fox Scholarship
               <br />
               Canada Graduate Scholarship - SSHRC
-            </p>
-            <p style={{ textAlign: 'justify', fontSize: '100%', marginTop: '20px' }}>
-              <em>Filmography:</em>
-              <br />
-              2025 | Thalaimarai | TBD
-              <br />
-              2025 | The Scale of Loss | 6 min | HD 4:3 | Stereo
-              <br />
-              2024 | Kaazhcha | 6:40 min | Surround 5.1
-              <br />
-              2023 | Lives of Hastings | Visual Arts | HD 1.85 |  Stereo
-              <br />
-              2022 | Al - Jumuah | 7 min | HD 16:9  | Stereo
-              <br />
-              2020 | Synthetic Syndrome | 2:31min | 8mm | Stereo
             </p>
           </div>
         </Col>

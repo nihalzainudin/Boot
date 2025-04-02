@@ -6,7 +6,7 @@ function SoundPage() {
     <Container
       fluid
       style={{
-        backgroundColor: 'black',
+        backgroundColor: 'transparent',
         minHeight: '100vh'
       }}
     >
@@ -20,7 +20,7 @@ function SoundPage() {
               color: 'white',
               padding: '15px',
               fontFamily: 'Garamond',
-              backgroundColor: 'rgba(0,0,0,0.5)'
+            //   backgroundColor: 'rgba(0,0,0,0.5)'
             }}
           >
             <h2 style={{ textAlign: 'left', fontSize: '120%', fontWeight: '900' }}>

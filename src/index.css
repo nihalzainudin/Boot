@@ -8,3 +8,60 @@
   padding-left: 5px; /* Should match the columnGap */
   background-clip: padding-box;
 }
+
+/* Style for WebKit browsers */
+.slide-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.slide-panel::-webkit-scrollbar-track {
+  background: #111;
+}
+
+.slide-panel::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 4px;
+  border: 2px solid #111;
+}
+
+/* Style for Firefox */
+.slide-panel {
+  scrollbar-width: thin;
+  scrollbar-color: #333 #111;
+}
+
+.nav-option {
+  display: block;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-option:hover {
+  transform: scale(1.05);
+  /* background-color: rgba(255, 255, 255, 0.15); */
+  border-radius: 4px;
+}
+
+.video-item {
+  transition: transform 0.2s ease;
+}
+
+.video-item:hover {
+  transform: scale(1.05);
+}
+
+.email-icon {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.email-icon:hover {
+  transform: scale(1.1);
+}
+
+.masonry-tile {
+  transition: transform 0s ease;
+}
+
+.masonry-tile:hover {
+  transform: scale(1.2);
+}

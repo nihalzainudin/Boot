@@ -3,8 +3,8 @@ import { Container } from 'react-bootstrap';
 import Masonry from 'react-masonry-css';
 import './index.css';
 
-// Create an array of 48 image paths (update if names differ)
-const images = Array.from({ length: 48 }, (_, idx) => `/images/photos/photo${idx + 1}.jpg`);
+// Create an array of 64 image paths (update if names differ)
+const images = Array.from({ length: 64 }, (_, idx) => `/images/photos/photo${idx + 1}.jpg`);
 
 function HomePage() {
   // Shuffle images on component mount using Fisher–Yates
@@ -27,7 +27,9 @@ function HomePage() {
   };
 
   return (
-    <Container fluid>
+    <Container fluid
+    style={{ backgroundColor: 'transparent'}}
+    >
       {/* Top padding */}
       <div style={{ height: '50px' }}></div>
       {/* Masonry layout container */}
@@ -41,8 +43,15 @@ function HomePage() {
             key={idx}
             src={src}
             alt=""
+            loading="lazy"  // enables lazy loading in modern browsers
+            onError={(e) => {
+              e.target.onerror = null; // prevents looping
+              e.target.src = "/images/photos/placeholder.jpg"; // use a placeholder image
+            }}
             style={{
               width: '100%',
+              height: '250px', // fixed height (adjust as needed)
+              objectFit: 'cover',
               marginBottom: '5px',
               display: 'block',
               border: 'none'
