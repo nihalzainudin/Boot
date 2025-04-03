@@ -17,15 +17,15 @@ function App() {
   const isMobile = window.innerWidth < 768;
 
   // Update the viewport height custom property on load and resize
-  useEffect(() => {
-    const setVhProperty = () => {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    };
-    setVhProperty();
-    window.addEventListener('resize', setVhProperty);
-    return () => window.removeEventListener('resize', setVhProperty);
-  }, []);
+  // useEffect(() => {
+  //   const setVhProperty = () => {
+  //     const vh = window.innerHeight * 0.01;
+  //     document.documentElement.style.setProperty('--vh', `${vh}px`);
+  //   };
+  //   setVhProperty();
+  //   window.addEventListener('resize', setVhProperty);
+  //   return () => window.removeEventListener('resize', setVhProperty);
+  // }, []);
 
   // For non-paintings pages, if it's the home page then always use the fixed background attachment
   const containerStyle = isPaintingsPage
@@ -78,7 +78,9 @@ function App() {
       <div className="d-md-none">
         <Navbar
           fixed="top"
-          bg={scrolled ? 'dark' : 'transparent'}
+          // bg={scrolled ? 'dark' : 'transparent'}
+          // bg='dark'
+          style={{ backgroundColor: 'rgb(47 47 47 / 80%)' }}  
           variant="dark"
           expand="md"
           className="mobile-nav"
@@ -250,7 +252,7 @@ function App() {
           md={{ span: 10, offset: 2 }}
           style={{
             // When expanded, use 250px; otherwise, use 56px (or adjust to your preferred height)
-            marginTop: isMobile ? (mobileProjectsToggle ? '250px' : '56px') : '0'
+            //marginTop: isMobile ? (mobileProjectsToggle ? '250px' : '56px') : '0'
           }}
         >
           <Routes>

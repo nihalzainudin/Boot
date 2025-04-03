@@ -105,8 +105,8 @@ html, body {
 
   .slide-panel {
     width: 85% !important;        /* Wider panel for mobile video player */
-    top: 160px !important;          /* Reduced gap above the 'Filmography' title */
-    height: calc(100% - 160px) !important;
+    top: 180px !important;          /* Reduced gap above the 'Filmography' title */
+    height: calc(100% - 180px) !important;
   }
 
   .video-desc {

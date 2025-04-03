@@ -57,7 +57,7 @@ function FilmographyPage() {
     transition: 'transform 0.5s ease',
     transform: selectedVideo ? 'translateX(0)' : 'translateX(100%)',
     overflowY: 'auto',
-    padding: '15px',
+    padding: '0px 15px 15px 15px',
     borderTopLeftRadius: '15px',
     borderBottomLeftRadius: '15px'
   };
