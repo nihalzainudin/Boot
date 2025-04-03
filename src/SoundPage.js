@@ -50,7 +50,7 @@ function SoundPage() {
                   controls
                   style={{ marginTop: '0px', width: '100%', maxWidth: '400px', opacity: 0.8, height: '20px' }}
                 >
-                  <source src="/audios/Binural_FMPR.wav" type="audio/wav" />
+                  <source src="/audios/Binural_FMPR.mp3" type="audio/mp3" />
                   Your browser does not support the audio element.
                 </audio>
               </Col>
