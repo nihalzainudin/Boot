@@ -176,7 +176,7 @@ function ContactPage() {
                       className="contact-input"
                     />
                   </Form.Group>
-                  <div style={{ textAlign: 'right', marginTop: '10px', paddingRight: '95px' }}>
+                  <div className="send-btn-container" style={{ textAlign: 'right', marginTop: '10px', paddingRight: '95px' }}>
                     <Button
                       variant="outline-light"
                       type="submit"

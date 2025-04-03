@@ -1,51 +1,131 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Nav } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Container, Row, Col, Nav, Navbar } from 'react-bootstrap';
 import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import HomePage from './HomePage';
-// import ImageLandingPage from './ImageLandingPage';
 import AboutPage from './AboutPage';
 import SoundPage from './SoundPage';
 import FilmographyPage from './FilmographyPage';
 import PaintingsPage from './PaintingsPage';
 import ContactPage from './ContactPage';
-// import BlogPage from './BlogPage';
 import VideoLandingPage from './VideoLandingPage';
 
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
+  const isHomePage = location.pathname === "/";
   const isPaintingsPage = location.pathname === '/paintings';
-  const isHomePage = location.pathname === '/';
+  const isMobile = window.innerWidth < 768;
 
+  // Update the viewport height custom property on load and resize
+  useEffect(() => {
+    const setVhProperty = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+    setVhProperty();
+    window.addEventListener('resize', setVhProperty);
+    return () => window.removeEventListener('resize', setVhProperty);
+  }, []);
+
+  // For non-paintings pages, if it's the home page then always use the fixed background attachment
   const containerStyle = isPaintingsPage
     ? {
         backgroundImage: "url('/images/bg_paintings.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        minHeight: '100vh'
+        minHeight: 'calc(var(--vh, 1vh) * 100)'
+      }
+    : isHomePage
+    ? {
+        backgroundImage: "url('/images/background_image.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',  // Force fixed background for home page
+        backgroundRepeat: 'no-repeat',
+        minHeight: 'calc(var(--vh, 1vh) * 100)'
       }
     : {
         backgroundImage: "url('/images/background_image.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',  // Fixes the image relative to the viewport
+        backgroundAttachment: isMobile ? 'scroll' : 'fixed',
         backgroundRepeat: 'no-repeat',
-        minHeight: '100vh'
+        minHeight: 'calc(var(--vh, 1vh) * 100)',
+        ...(isMobile && { height: 'auto' })
       };
 
   // Use black text for PaintingsPage; otherwise use white.
   const textColor = isPaintingsPage ? 'black' : 'white';
 
-  // State to toggle the sub-menu under "Projects"
+  // State for toggling submenus
   const [showProjectsSub, setShowProjectsSub] = useState(false);
+  const [mobileProjectsToggle, setMobileProjectsToggle] = useState(false);
+
+  // State to track scroll position for mobile Navbar background
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.pageYOffset > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <Container fluid style={containerStyle}>
+      {/* Mobile – Responsive Navbar shown on screens smaller than md */}
+      <div className="d-md-none">
+        <Navbar
+          fixed="top"
+          bg={scrolled ? 'dark' : 'transparent'}
+          variant="dark"
+          expand="md"
+          className="mobile-nav"
+        >
+          <Container>
+            <Navbar.Brand as={Link} to="/">Farzana Yussuf</Navbar.Brand>
+            <Navbar.Toggle
+              aria-controls="basic-navbar-nav"
+              onClick={() => setMobileProjectsToggle(false)}
+            />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="me-auto">
+                <Nav.Link
+                  onClick={() => {
+                    if (location.pathname !== "/") {
+                      navigate("/");
+                    }
+                    setMobileProjectsToggle(!mobileProjectsToggle);
+                  }}
+                >
+                  Projects
+                </Nav.Link>
+                {mobileProjectsToggle && (
+                  <>
+                    <Nav.Link as={Link} to="/sound">Sound</Nav.Link>
+                    <Nav.Link as={Link} to="/filmography">Filmography</Nav.Link>
+                    <Nav.Link as={Link} to="/paintings">Paintings</Nav.Link>
+                  </>
+                )}
+                <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
+                <Nav.Link as={Link} to="/about">About</Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+      </div>
+
+      {/* Spacer div for mobile – its height is controlled via CSS media queries */}
+      {isMobile && (
+        <div className={`content-spacer ${mobileProjectsToggle ? 'expanded' : ''}`} />
+      )}
+
       <Row>
-        {/* Side panel with transparent background */}
+        {/* Desktop – Side panel for medium and larger screens */}
         <Col
           md={2}
+          className="d-none d-md-block"
           style={{
             position: 'fixed',
             top: 0,
@@ -66,14 +146,12 @@ function App() {
               Farzana Yussuf
             </h2>
             <Nav className="flex-column">
-              {/* Projects acts as a clickable header for the sub-menu */}
               <Nav.Link
                 as={Link}
                 to="/"
                 className="nav-option"
                 onClick={() => {
                   if (location.pathname === "/") {
-                    // Toggle sub-menu if already on homepage
                     setShowProjectsSub(!showProjectsSub);
                   } else {
                     setShowProjectsSub(true);
@@ -147,7 +225,6 @@ function App() {
                 className="email-icon"
                 title="Send Email"
               >
-                {/* Minimalistic white paper plane icon with reduced size */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -166,8 +243,16 @@ function App() {
             </div>
           </div>
         </Col>
-        {/* Main content offset by fixed side panel */}
-        <Col md={{ span: 10, offset: 2 }}>
+
+        {/* Main content – occupies full width on mobile, offset on desktop */}
+        <Col
+          xs={12}
+          md={{ span: 10, offset: 2 }}
+          style={{
+            // When expanded, use 250px; otherwise, use 56px (or adjust to your preferred height)
+            marginTop: isMobile ? (mobileProjectsToggle ? '250px' : '56px') : '0'
+          }}
+        >
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route

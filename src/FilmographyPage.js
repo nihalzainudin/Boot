@@ -71,7 +71,7 @@ function FilmographyPage() {
         position: 'relative',
         color: 'white',
         fontFamily: 'Garamond',
-        paddingTop: '90px'
+        paddingTop: '40px'
       }}
     >
       {/* Vertical list of videos */}
@@ -102,99 +102,25 @@ function FilmographyPage() {
       {/* Slide panel for video playback */}
       <div className="slide-panel" style={slidePanelStyle}>
         {selectedVideo ? (
-          selectedVideo.description.includes("Lives of Hastings") ? (
-            <>
+          <>
+            {/* Sticky header for video description and close button */}
+            <div style={{
+                position: 'sticky',
+                top: 0,
+                backgroundColor: '#111', // solid background
+                zIndex: 9999,            // increased z-index
+                padding: '15px'
+            }}>
               <Row>
                 <Col>
                   <div
+                    className="video-desc"
                     style={{
                       color: 'white',
                       fontSize: '18px',
-                      marginBottom: '15px',
-                      whiteSpace: 'nowrap'
-                    }}
-                  >
-                    {selectedVideo.description}
-                  </div>
-                </Col>
-                <Col style={{ textAlign: 'right' }}>
-                  <span
-                    onClick={() => setSelectedVideo(null)}
-                    style={{
-                      color: 'grey',
-                      fontSize: '22px',
-                      cursor: 'pointer',
-                      userSelect: 'none',
-                      position: 'relative',
-                      bottom: '5px'
-                    }}
-                  >
-                    &times;
-                  </span>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <div
-                    style={{
-                      color: 'white',
-                      fontSize: '16px',
                       marginBottom: '15px'
                     }}
                   >
-                    This project explores homelessness and drug use in Vancouver's Hastings area through a documentary-style approach. It combines visual storytelling with raw, unfiltered photography, capturing candid moments, the stark textures of the urban environment, and the deeply human expressions of those living within it. Where interviews or personal stories were incorporated, they were approached with respect and a commitment to authenticity. These conversations, alongside environmental portraits, were conducted with a non-intrusive approach. Street photography techniques, such as the use of natural light, high-contrast black-and-white shots, or slow shutter speeds to capture the blur of movement, were employed to immerse the viewer in the raw reality of the environment.
-                  </div>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <video
-                    src={selectedVideo.src}
-                    controls
-                    controlsList="nodownload"
-                    style={{ width: '100%', maxHeight: '400px', display: 'block' }}
-                  />
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <div
-                    style={{
-                      color: 'white',
-                      fontSize: '16px',
-                      marginTop: '15px',
-                      lineHeight: '1.5em'
-                    }}
-                  >
-                    A hybrid approach, merging the evocative nature of double exposure photography with dynamic video installation. The visual component employs double exposure techniques, layering imagery to create a sense of fragmented reality and emotional depth. To further enhance the viewer's immersion, a single video sequence is presented across nine synchronized cubes, arranged within a single screen. This multi-faceted display elongates the perception of depth and distorts spatial awareness, drawing the viewer into the work's intricate layers.
-
-The intended outcome of this project is to challenge existing perceptions, to humanize those who are often dismissed as 'unhoused,' and to document the profound impact of addiction in Vancouver’s Downtown Eastside.
-
-                  </div>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <img
-                    src="/images/background_image.jpg"
-                    alt="Background"
-                    style={{ width: '100%', display: 'block', marginTop: '15px' }}
-                  />
-                </Col>
-              </Row>
-            </>
-          ) : (
-            <>
-              <Row>
-                <Col>
-                  <div
-                    style={{
-                      color: 'white',
-                      fontSize: '18px',
-                      marginBottom: '15px',
-                      whiteSpace: 'nowrap'
-                    }}
-                  >
                     {selectedVideo.description}
                   </div>
                 </Col>
@@ -214,17 +140,34 @@ The intended outcome of this project is to challenge existing perceptions, to hu
                   </span>
                 </Col>
               </Row>
-              <Row>
-                <Col>
-                  <video
-                    src={selectedVideo.src}
-                    controls
-                    controlsList="nodownload"
-                    style={{ width: '100%', maxHeight: '400px', display: 'block' }}
-                  />
-                </Col>
-              </Row>
-              {selectedVideo.longDescription && (
+            </div>
+
+            {/* Rest of the slide-panel content continues here */}
+            {selectedVideo.description.includes("Lives of Hastings") ? (
+              <>
+                <Row>
+                  <Col>
+                    <div
+                      style={{
+                        color: 'white',
+                        fontSize: '16px',
+                        marginBottom: '15px'
+                      }}
+                    >
+                      This project explores homelessness and drug use in Vancouver's Hastings area through a documentary-style approach. It combines visual storytelling with raw, unfiltered photography, capturing candid moments, the stark textures of the urban environment, and the deeply human expressions of those living within it. Where interviews or personal stories were incorporated, they were approached with respect and a commitment to authenticity. These conversations, alongside environmental portraits, were conducted with a non-intrusive approach. Street photography techniques, such as the use of natural light, high-contrast black-and-white shots, or slow shutter speeds to capture the blur of movement, were employed to immerse the viewer in the raw reality of the environment.
+                    </div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <video
+                      src={selectedVideo.src}
+                      controls
+                      controlsList="nodownload"
+                      style={{ width: '100%', maxHeight: '400px', display: 'block' }}
+                    />
+                  </Col>
+                </Row>
                 <Row>
                   <Col>
                     <div
@@ -235,13 +178,54 @@ The intended outcome of this project is to challenge existing perceptions, to hu
                         lineHeight: '1.5em'
                       }}
                     >
-                      {selectedVideo.longDescription}
+                      A hybrid approach, merging the evocative nature of double exposure photography with dynamic video installation. The visual component employs double exposure techniques, layering imagery to create a sense of fragmented reality and emotional depth. To further enhance the viewer's immersion, a single video sequence is presented across nine synchronized cubes, arranged within a single screen. This multi-faceted display elongates the perception of depth and distorts spatial awareness, drawing the viewer into the work's intricate layers.
+
+The intended outcome of this project is to challenge existing perceptions, to humanize those who are often dismissed as 'unhoused,' and to document the profound impact of addiction in Vancouver’s Downtown Eastside.
+
                     </div>
                   </Col>
                 </Row>
-              )}
-            </>
-          )
+                <Row>
+                  <Col>
+                    <img
+                      src="/images/background_image.jpg"
+                      alt="Background"
+                      style={{ width: '100%', display: 'block', marginTop: '15px' }}
+                    />
+                  </Col>
+                </Row>
+              </>
+            ) : (
+              <>
+                <Row>
+                  <Col>
+                    <video
+                      src={selectedVideo.src}
+                      controls
+                      controlsList="nodownload"
+                      style={{ width: '100%', maxHeight: '400px', display: 'block' }}
+                    />
+                  </Col>
+                </Row>
+                {selectedVideo.longDescription && (
+                  <Row>
+                    <Col>
+                      <div
+                        style={{
+                          color: 'white',
+                          fontSize: '16px',
+                          marginTop: '15px',
+                          lineHeight: '1.5em'
+                        }}
+                      >
+                        {selectedVideo.longDescription}
+                      </div>
+                    </Col>
+                  </Row>
+                )}
+              </>
+            )}
+          </>
         ) : (
           <div style={{ padding: '15px' }}>
             <p>Select a video to view details.</p>

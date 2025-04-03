@@ -45,8 +45,11 @@ function SoundPage() {
                 <p style={{ textAlign: 'justify', fontSize: '100%', marginTop: '20px' }}>
                   <em>(use headphones for the best experience)</em>
                 </p>
-                {/* Audio player with 80% opacity */}
-                <audio controls style={{ marginTop: '0px', width: '40%', opacity: 0.8, height: '20px' }}>
+                {/* Audio player with updated styles */}
+                <audio 
+                  controls
+                  style={{ marginTop: '0px', width: '100%', maxWidth: '400px', opacity: 0.8, height: '20px' }}
+                >
                   <source src="/audios/Binural_FMPR.wav" type="audio/wav" />
                   Your browser does not support the audio element.
                 </audio>

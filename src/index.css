@@ -65,3 +65,60 @@
 .masonry-tile:hover {
   transform: scale(1.2);
 }
+
+html, body, * {
+  font-family: 'Garamond', serif !important;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background-color: #000;
+  overflow-x: hidden;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 1px solid transparent !important;
+}
+
+.video-desc {
+  white-space: nowrap;
+}
+
+.mobile-nav {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.navbar-collapse.show {
+  padding: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .send-btn-container {
+    text-align: left !important;
+    padding-right: 0 !important;
+  }
+
+  .slide-panel {
+    width: 85% !important;        /* Wider panel for mobile video player */
+    top: 160px !important;          /* Reduced gap above the 'Filmography' title */
+    height: calc(100% - 160px) !important;
+  }
+
+  .video-desc {
+    white-space: normal;
+  }
+
+  .content-spacer {
+    height: 70px;  /* Default height */
+    transition: height 0.3s ease;
+  }
+  
+  .content-spacer.expanded {
+    height: 250px;  /* Height when menu is expanded */
+  }
+}
