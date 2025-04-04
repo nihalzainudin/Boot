@@ -26,7 +26,7 @@ function FilmographyPage() {
         "A father and son, reeling from the death of their mother, seek solace in their shared faith and each other. 'AL-JUMUAH' depicts their brief moment of healing before the horrific events of the Christchurch mosque shootings tear them apart forever. This is a stark portrayal of the devastating impact of hate-fueled violence on a family already burdened by grief."
     },
     {
-      src: '/videos/d.mp4',
+      src: 'https://drive.google.com/file/d/1gEml9WCKdDj19rbwnuA_u1C8LCQUb7Hg/preview',
       description: '2020 | Synthetic Syndrome | 2:31 min | 8mm | Stereo',
       longDescription:
         "Synthetic Syndrome is a 2:31 minute 8mm experimental film that delves into the frustrating cycle of creative stagnation. Through the grainy, nostalgic lens of 8mm, the film observes an artist trapped in a loop of failed attempts. Driven by an insatiable need to create something novel, he repeatedly confronts the blank canvas, the unformed clay, the silent instrument. Each effort, marked by frantic energy and fleeting inspiration, culminates in the same disappointing result: a void. The film's short duration amplifies the artist's escalating frustration, mirroring the fleeting nature of inspiration itself.  The film explores the tension between the yearning for originality and the crushing weight of creative blockage, leaving the audience to ponder the elusive nature of artistic fulfillment."
@@ -107,9 +107,12 @@ function FilmographyPage() {
             <div style={{
                 position: 'sticky',
                 top: 0,
-                backgroundColor: '#111', // solid background
-                zIndex: 9999,            // increased z-index
-                padding: '15px'
+                left: 0,
+                right: 0,
+                backgroundColor: '#111',
+                zIndex: 9999,
+                padding: '15px',
+                flexShrink: 0
             }}>
               <Row>
                 <Col>
@@ -147,11 +150,25 @@ function FilmographyPage() {
               <>
                 <Row>
                   <Col>
+                    <iframe
+                      src="https://drive.google.com/file/d/15hRAGPaAwEhycdOXmYLGsZTnp82CTNii/preview"
+                      width="100%"
+                      height="400"
+                      allow="autoplay; fullscreen"
+                      allowFullScreen
+                      sandbox="allow-same-origin allow-scripts allow-fullscreen"
+                      style={{ border: 'none' }}
+                    ></iframe>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
                     <div
                       style={{
                         color: 'white',
                         fontSize: '16px',
-                        marginBottom: '15px'
+                        marginTop: '15px',
+                        lineHeight: '1.5em'
                       }}
                     >
                       This project explores homelessness and drug use in Vancouver's Hastings area through a documentary-style approach. It combines visual storytelling with raw, unfiltered photography, capturing candid moments, the stark textures of the urban environment, and the deeply human expressions of those living within it. Where interviews or personal stories were incorporated, they were approached with respect and a commitment to authenticity. These conversations, alongside environmental portraits, were conducted with a non-intrusive approach. Street photography techniques, such as the use of natural light, high-contrast black-and-white shots, or slow shutter speeds to capture the blur of movement, were employed to immerse the viewer in the raw reality of the environment.
@@ -160,12 +177,15 @@ function FilmographyPage() {
                 </Row>
                 <Row>
                   <Col>
-                    <video
-                      src={selectedVideo.src}
-                      controls
-                      controlsList="nodownload"
-                      style={{ width: '100%', maxHeight: '400px', display: 'block' }}
-                    />
+                    <iframe
+                      src="https://drive.google.com/file/d/1npab5CPw4XkKsAsq71KmVE3sqnzK6M6X/preview"
+                      width="100%"
+                      height="400"
+                      allow="autoplay; fullscreen"
+                      allowFullScreen
+                      sandbox="allow-same-origin allow-scripts allow-fullscreen"
+                      style={{ border: 'none' }}
+                    ></iframe>
                   </Col>
                 </Row>
                 <Row>
@@ -180,16 +200,38 @@ function FilmographyPage() {
                     >
                       A hybrid approach, merging the evocative nature of double exposure photography with dynamic video installation. The visual component employs double exposure techniques, layering imagery to create a sense of fragmented reality and emotional depth. To further enhance the viewer's immersion, a single video sequence is presented across nine synchronized cubes, arranged within a single screen. This multi-faceted display elongates the perception of depth and distorts spatial awareness, drawing the viewer into the work's intricate layers.
 
-The intended outcome of this project is to challenge existing perceptions, to humanize those who are often dismissed as 'unhoused,' and to document the profound impact of addiction in Vancouver’s Downtown Eastside.
-
+                      The intended outcome of this project is to challenge existing perceptions, to humanize those who are often dismissed as 'unhoused,' and to document the profound impact of addiction in Vancouver’s Downtown Eastside.
                     </div>
                   </Col>
                 </Row>
                 <Row>
-                  <Col>
+                  <Col md={6}>
                     <img
-                      src="/images/background_image.jpg"
-                      alt="Background"
+                      src="/images/1.jpg"
+                      alt="1"
+                      style={{ width: '100%', display: 'block', marginTop: '15px' }}
+                    />
+                  </Col>
+                  <Col md={6}>
+                    <img
+                      src="/images/2.jpg"
+                      alt="2"
+                      style={{ width: '100%', display: 'block', marginTop: '15px' }}
+                    />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col md={6}>
+                    <img
+                      src="/images/3.jpg"
+                      alt="3"
+                      style={{ width: '100%', display: 'block', marginTop: '15px' }}
+                    />
+                  </Col>
+                  <Col md={6}>
+                    <img
+                      src="/images/4.jpg"
+                      alt="4"
                       style={{ width: '100%', display: 'block', marginTop: '15px' }}
                     />
                   </Col>
@@ -199,12 +241,24 @@ The intended outcome of this project is to challenge existing perceptions, to hu
               <>
                 <Row>
                   <Col>
-                    <video
-                      src={selectedVideo.src}
-                      controls
-                      controlsList="nodownload"
-                      style={{ width: '100%', maxHeight: '400px', display: 'block' }}
-                    />
+                    {selectedVideo.src.includes("drive.google.com") ? (
+                      <iframe
+                        src={selectedVideo.src}
+                        width="100%"
+                        height="400"
+                        allow="autoplay; fullscreen"
+                        allowFullScreen
+                        sandbox="allow-same-origin allow-scripts allow-fullscreen"
+                        style={{ border: 'none' }}
+                      ></iframe>
+                    ) : (
+                      <video
+                        src={selectedVideo.src}
+                        controls
+                        controlsList="nodownload"
+                        style={{ width: '100%', maxHeight: '400px', display: 'block' }}
+                      />
+                    )}
                   </Col>
                 </Row>
                 {selectedVideo.longDescription && (

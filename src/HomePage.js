@@ -4,7 +4,7 @@ import Masonry from 'react-masonry-css';
 import './index.css';
 
 // Create an array of 64 image paths (update if names differ)
-const images = Array.from({ length: 64 }, (_, idx) => `/images/photos/photo${idx + 1}.jpg`);
+const images = Array.from({ length: 63 }, (_, idx) => `/images/photos/photo${idx + 1}.jpg`);
 
 function HomePage() {
   // Shuffle images on component mount using Fisher–Yates
