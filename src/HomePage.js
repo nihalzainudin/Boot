@@ -40,10 +40,10 @@ function HomePage() {
       >
         {shuffledImages.map((src, idx) => (
           <img
+            loading="lazy"  // enables lazy loading in modern browsers
             key={idx}
             src={src}
             alt=""
-            loading="lazy"  // enables lazy loading in modern browsers
             onError={(e) => {
               e.target.onerror = null; // prevents looping
               e.target.src = "/images/photos/placeholder.jpg"; // use a placeholder image
