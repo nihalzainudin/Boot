@@ -41,7 +41,7 @@ function PaintingsPage() {
     <Container
       fluid
       style={{
-        backgroundImage: "url('/images/bg_paintings.jpg')",
+        // backgroundImage: "url('/images/bg_paintings.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         minHeight: '100vh',
@@ -62,6 +62,7 @@ function PaintingsPage() {
       <div
         style={{
           position: 'absolute',
+          right : '0',
           top: '40%',
           width: '100%',
           textAlign: 'center'
