@@ -122,3 +122,37 @@ html, body {
     height: 250px;  /* Height when menu is expanded */
   }
 }
+
+/* Mobile adjustments for PaintingsPage elements */
+@media (max-width: 767.98px) {
+  .paintings-content {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+    padding-top: 0 !important;
+    text-align: center;
+  }
+  .paintings-heading {
+    font-size: 2.5rem !important;
+    transform: none !important;
+    color: white;
+  }
+  .paintings-paragraph {
+    font-size: 1rem !important;
+    transform: none !important;
+    color: white;
+  }
+  .paintings-form-container {
+    width: 100% !important;
+    transform: none !important;
+    margin-top: 20px !important;
+    display: flex;
+    justify-content: center;
+  }
+  .paintings-form-container .contact-input, /* or target the input control */
+  .paintings-form-container input {
+    width: 80% !important;
+  }
+}

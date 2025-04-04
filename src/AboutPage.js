@@ -20,7 +20,7 @@ function AboutPage() {
             </h2>
             {/* Increased padding between heading and description */}
             <p style={{ textAlign: 'justify', fontSize: '100%', marginTop: '35px' }}>
-              ABC is a multidisciplinary documentary artist whose work explores the intricate spaces between individuals and their belief systems. Using binaural audio works and photography as her primary mediums, she creates immersive narratives that investigate identity, connection, and dissonance. Driven by a commitment to amplifying the voices of marginalized communities, her projects shed light on a wide spectrum of socio-political issues. Through her powerful storytelling, ABC invites audiences to engage with perspectives often overlooked, fostering empathy, reflection, and dialogue.
+            Farzana Yussuf is a multidisciplinary documentary artist whose work explores the intricate spaces between individuals and their belief systems. Using binaural audio works and photography as her primary mediums, she creates immersive narratives that investigate identity, connection, and dissonance. Driven by a commitment to amplifying the voices of marginalized communities, her projects shed light on a wide spectrum of socio-political issues. Through her powerful storytelling, Farzana invites audiences to engage with perspectives often overlooked, fostering empathy, reflection, and dialogue.
             </p>
             <p style={{ textAlign: 'justify', fontSize: '100%', marginTop: '20px' }}>
               <em>Mentorships + Awards + Prizes:</em>
