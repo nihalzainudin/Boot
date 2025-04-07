@@ -27,6 +27,7 @@
             const img = document.createElement('img');
             img.src = `images/photos/photo${num}.jpg`;
             img.alt = `Photo ${num}`;
+            img.loading = "lazy"; // enable lazy loading on the img element
             gallery.appendChild(img);
         });
     </script>

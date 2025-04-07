@@ -3,11 +3,11 @@ import { Container } from 'react-bootstrap';
 import Masonry from 'react-masonry-css';
 import './index.css';
 
-// Create an array of 64 image paths (update if names differ)
+// Create an array of 63 image paths
 const images = Array.from({ length: 63 }, (_, idx) => `/images/photos/photo${idx + 1}.jpg`);
 
 function HomePage() {
-  // Shuffle images on component mount using Fisher–Yates
+  // Shuffle images using the Fisher–Yates algorithm
   const shuffledImages = React.useMemo(() => {
     const imgs = [...images];
     for (let i = imgs.length - 1; i > 0; i--) {
@@ -27,9 +27,7 @@ function HomePage() {
   };
 
   return (
-    <Container fluid
-    style={{ backgroundColor: 'transparent'}}
-    >
+    <Container fluid style={{ backgroundColor: 'transparent' }}>
       {/* Top padding */}
       <div style={{ height: '50px' }}></div>
       {/* Masonry layout container */}
@@ -40,13 +38,13 @@ function HomePage() {
       >
         {shuffledImages.map((src, idx) => (
           <img
-            loading="lazy"  // enables lazy loading in modern browsers
+            loading="lazy"  // native lazy loading enabled
             key={idx}
             src={src}
             alt=""
             onError={(e) => {
               e.target.onerror = null; // prevents looping
-              e.target.src = "/images/photos/placeholder.jpg"; // use a placeholder image
+              e.target.src = "/images/photos/placeholder.jpg"; // fallback placeholder image
             }}
             style={{
               width: '100%',
