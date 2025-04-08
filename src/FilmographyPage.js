@@ -65,13 +65,14 @@ function FilmographyPage() {
   return (
     <Container
       fluid
+      className="filmography-page-container"
       style={{
         backgroundColor: 'transparent',
         minHeight: '100vh',
         position: 'relative',
         color: 'white',
         fontFamily: 'Sans, sans-serif',
-        paddingTop: '90px'
+        paddingTop: '90px' // default top padding for desktop
       }}
     >
       {/* Vertical list of videos */}

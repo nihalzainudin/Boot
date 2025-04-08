@@ -113,8 +113,8 @@ html, body {
 
   .slide-panel {
     width: 85% !important;        /* Wider panel for mobile video player */
-    top: 180px !important;          /* Reduced gap above the 'Filmography' title */
-    height: calc(100% - 180px) !important;
+    top: 165px !important;          /* Reduced gap above the 'Filmography' title */
+    height: calc(100% - 165px) !important;
   }
 
   .video-desc {
@@ -133,6 +133,10 @@ html, body {
   .mobile-nav .navbar-brand {
     font-family: 'Ahsing', sans-serif !important;
     font-size: 2.5rem !important; /* Adjust this value as needed */
+  }
+
+  .filmography-page-container {
+    padding-top: 50px !important; /* Adjust this value as needed */
   }
 }
 
