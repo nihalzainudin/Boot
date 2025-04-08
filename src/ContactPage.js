@@ -111,7 +111,7 @@ function ContactPage() {
       <Row>
         <Col>
           <div style={{ color: 'white', padding: '15px', fontFamily: 'Garamond' }}>
-            <h2 style={{ textAlign: 'left', fontSize: '120%', fontWeight: '900' }}>Contact</h2>
+            {/* <h2 style={{ textAlign: 'left', fontSize: '120%', fontWeight: '900' }}>Contact</h2> */}
           </div>
         </Col>
       </Row>

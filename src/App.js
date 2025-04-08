@@ -13,7 +13,7 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
   const isHomePage = location.pathname === "/";
-  const isPaintingsPage = location.pathname === '/paintings';
+  const isPaintingsPage = location.pathname === '/PAINTINGS';
   const isMobile = window.innerWidth < 768;
 
   // Update the viewport height custom property on load and resize
@@ -86,7 +86,7 @@ function App() {
           className="mobile-nav"
         >
           <Container>
-            <Navbar.Brand as={Link} to="/">Farzana Yussuf</Navbar.Brand>
+            <Navbar.Brand as={Link} to="/">FY</Navbar.Brand>
             <Navbar.Toggle
               aria-controls="basic-navbar-nav"
               onClick={() => setMobileProjectsToggle(false)}
@@ -101,17 +101,17 @@ function App() {
                     setMobileProjectsToggle(!mobileProjectsToggle);
                   }}
                 >
-                  Projects
+                  PROJECTS
                 </Nav.Link>
                 {mobileProjectsToggle && (
                   <>
-                    <Nav.Link as={Link} to="/sound">Sound</Nav.Link>
-                    <Nav.Link as={Link} to="/filmography">Filmography</Nav.Link>
-                    <Nav.Link as={Link} to="/paintings">Paintings</Nav.Link>
+                    <Nav.Link as={Link} to="/SOUND">SOUND</Nav.Link>
+                    <Nav.Link as={Link} to="/FILMOGRAPHY">FILMOGRAPHY</Nav.Link>
+                    <Nav.Link as={Link} to="/PAINTINGS">PAINTINGS</Nav.Link>
                   </>
                 )}
-                <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
-                <Nav.Link as={Link} to="/about">About</Nav.Link>
+                <Nav.Link as={Link} to="/CONTACT">CONTACT</Nav.Link>
+                <Nav.Link as={Link} to="/ABOUT">ABOUT</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
@@ -140,12 +140,17 @@ function App() {
             style={{
               color: textColor,
               padding: '15px',
-              marginTop: '30px',
-              fontFamily: 'Garamond'
+              fontFamily: 'Glacial Indifference, sans-serif'
             }}
           >
-            <h2 style={{ fontFamily: 'Garamond', marginBottom: '30px' }}>
-              Farzana Yussuf
+            <h2
+              style={{
+                fontFamily: 'Ahsing',
+                marginBottom: '60px',
+                fontSize: isMobile ? '450%' : '300%'
+              }}
+            >
+              FY
             </h2>
             <Nav className="flex-column">
               <Nav.Link
@@ -163,55 +168,82 @@ function App() {
                 style={{
                   color: textColor,
                   padding: '5px 0',
-                  fontFamily: 'Garamond',
-                  cursor: 'pointer'
+                  fontFamily: 'Glacial Indifference, sans-serif',
+                  cursor: 'pointer',
+                  fontSize: '0.8rem' // reduced font size
                 }}
               >
-                Projects
+                PROJECTS
               </Nav.Link>
               {showProjectsSub && (
                 <div style={{ marginLeft: '15px' }}>
                   <Nav.Link
                     as={Link}
-                    to="/sound"
+                    to="/SOUND"
                     className="nav-option"
-                    style={{ color: textColor, padding: '2px 0', fontFamily: 'Garamond' }}
+                    style={{
+                      color: textColor,
+                      padding: '2px 0',
+                      fontFamily: 'Glacial Indifference, sans-serif',
+                      fontSize: '0.8rem'  // reduced font size
+                    }}
                   >
-                    Sound
+                    SOUND
                   </Nav.Link>
                   <Nav.Link
                     as={Link}
-                    to="/filmography"
+                    to="/FILMOGRAPHY"
                     className="nav-option"
-                    style={{ color: textColor, padding: '2px 0', fontFamily: 'Garamond' }}
+                    style={{
+                      color: textColor,
+                      padding: '2px 0',
+                      fontFamily: 'Glacial Indifference, sans-serif',
+                      fontSize: '0.8rem'  // reduced font size
+                    }}
                   >
-                    Filmography
+                    FILMOGRAPHY
                   </Nav.Link>
                   <Nav.Link
                     as={Link}
-                    to="/paintings"
+                    to="/PAINTINGS"
                     className="nav-option"
-                    style={{ color: textColor, padding: '2px 0', fontFamily: 'Garamond' }}
+                    style={{
+                      color: textColor,
+                      padding: '2px 0',
+                      fontFamily: 'Glacial Indifference, sans-serif',
+                      fontSize: '0.8rem'  // reduced font size
+                    }}
                   >
-                    Paintings
+                    PAINTINGS
                   </Nav.Link>
                 </div>
               )}
               <Nav.Link
                 as={Link}
-                to="/contact"
+                to="/CONTACT"
                 className="nav-option"
-                style={{ color: textColor, padding: '5px 0', fontFamily: 'Garamond' }}
+                style={{
+                  color: textColor,
+                  padding: '5px 0',
+                  fontFamily: 'Glacial Indifference, sans-serif',
+                  fontSize: '0.8rem'  // reduced font size
+                }}
               >
-                Contact
+                CONTACT
               </Nav.Link>
               <Nav.Link
                 as={Link}
-                to="/about"
+                to="/ABOUT"
                 className="nav-option"
-                style={{ color: textColor, padding: '5px 0', fontFamily: 'Garamond' }}
+                style={{
+                  color: textColor,
+                  fontWeight: 'lighter',
+                  padding: '5px 0',
+                  fontFamily: 'Glacial Indifference, sans-serif',
+                  fontSize: '0.8rem'  // reduced font size
+                }}
               >
-                About
+                ABOUT
               </Nav.Link>
             </Nav>
             <div
@@ -219,7 +251,7 @@ function App() {
                 position: 'absolute',
                 bottom: '15px',
                 left: '15px',
-                fontFamily: 'Garamond'
+                fontFamily: 'Glacial Indifference, sans-serif'
               }}
             >
               <a
@@ -265,11 +297,11 @@ function App() {
                 </div>
               }
             />
-            <Route path="/sound" element={<SoundPage />} />
-            <Route path="/filmography" element={<FilmographyPage />} />
-            <Route path="/paintings" element={<PaintingsPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/about" element={<AboutPage />} />
+            <Route path="/SOUND" element={<SoundPage />} />
+            <Route path="/FILMOGRAPHY" element={<FilmographyPage />} />
+            <Route path="/PAINTINGS" element={<PaintingsPage />} />
+            <Route path="/CONTACT" element={<ContactPage />} />
+            <Route path="/ABOUT" element={<AboutPage />} />
             <Route path="/video" element={<VideoLandingPage />} />
           </Routes>
         </Col>

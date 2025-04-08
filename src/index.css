@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Ahsing';
+  src: url('./fonts/Ahsing-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Example CSS for react-masonry-css */
 .my-masonry-grid {
   display: flex;
@@ -67,7 +74,8 @@
 }
 
 html, body, * {
-  font-family: 'Garamond', serif !important;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
 }
 
 html, body {
@@ -120,6 +128,11 @@ html, body {
   
   .content-spacer.expanded {
     height: 250px;  /* Height when menu is expanded */
+  }
+
+  .mobile-nav .navbar-brand {
+    font-family: 'Ahsing', sans-serif !important;
+    font-size: 2.5rem !important; /* Adjust this value as needed */
   }
 }
 

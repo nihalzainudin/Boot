@@ -11,7 +11,7 @@ function SoundPage() {
       }}
     >
       {/* Padding row similar to above the Artist Statement */}
-      <Row style={{ height: '35px' }}></Row>
+      <Row style={{ height: '50px' }}></Row>
       {/* Main vertical grid */}
       <Row>
         <Col md={12}>
@@ -19,8 +19,7 @@ function SoundPage() {
             style={{
               color: 'white',
               padding: '15px',
-              fontFamily: 'Garamond',
-            //   backgroundColor: 'rgba(0,0,0,0.5)'
+              fontFamily: 'Sans, sans-serif'
             }}
           >
             <h2 style={{ textAlign: 'left', fontSize: '120%', fontWeight: '900' }}>

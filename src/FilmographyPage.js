@@ -7,13 +7,13 @@ function FilmographyPage() {
       src: '/videos/The Scale of Loss.mp4',
       description: '2025 | Thalaimarai | TBD',
       longDescription:
-        "In a busy city intersection, a small figure moves through the flow of life, barely noticed. Their voice breaks through the noise, a weight of a phone call—the loss of a loved one. As their grief grows, a stark contrast to the indifferent rhythm of the city. The tilt-shift effect transforms the scene into a miniature world, emphasizing the overwhelming detachment and indifference of the surroundings. Through this distant perspective and intimate voiceover, the film captures the fragile, isolating experience of mourning in a world that never stops."
+        "Set against the backdrop of Chennai, this short experimental documentary explores the often-silenced lives of elders who have been left behind by their families. Through intimate interviews and reflective visuals, the film uncovers stories of abandonment shaped not only by personal circumstances, but by deep-rooted cultural traditions. One such practice—Thalaikoothal, a controversial and still-practiced ritual—serves as a haunting symbol of how care can blur into quiet erasure. Blending memory, myth, and lived experience, the documentary invites viewers to witness aging through the eyes of those forgotten, asking how cultural beliefs shape both the treatment of the elderly and their isolation in later life."
     },
     {
       src: '/videos/The Scale of Loss.mp4',
       description: '2025 | The Scale of Loss | 6 min | HD 4:3 | Stereo',
       longDescription:
-        "In a busy city intersection, a small figure moves through the flow of life, barely noticed. Their voice breaks through the noise, a weight of a phone call—the loss of a loved one. As their grief grows, a stark contrast to the indifferent rhythm of the city. The tilt-shift effect transforms the scene into a miniature world, emphasizing the overwhelming detachment and indifference of the surroundings. Through this distant perspective and intimate voiceover, the film captures the fragile, isolating experience of mourning in a world that never stops."
+        "In the heart of a bustling city, one person receives a life-altering phone call. As crowds surge past and traffic hums on, they’re pulled into a quiet grief that no one else seems to notice. The world continues—indifferent, unbothered—while they struggle to process a sudden loss. Shot with a tilt-shift effect that makes the city feel miniature and distant, the film draws a stark contrast between public motion and private mourning. Through an intimate voiceover and quiet visual storytelling, it captures the isolating weight of loss in a place that never slows down."
     },
     {
       src: '/videos/b.mp4',
@@ -70,14 +70,14 @@ function FilmographyPage() {
         minHeight: '100vh',
         position: 'relative',
         color: 'white',
-        fontFamily: 'Garamond',
-        paddingTop: '40px'
+        fontFamily: 'Sans, sans-serif',
+        paddingTop: '90px'
       }}
     >
       {/* Vertical list of videos */}
       <Row style={{ padding: '15px' }}>
         <Col>
-          <h2 style={{ marginBottom: '30px', fontSize: '120%' }}>Filmography</h2>
+          <h2 style={{ marginBottom: '30px', fontSize: '120%' }}></h2>
           {videos.map((video, idx) => {
             const { year, text } = parseDescription(video.description);
             return (
@@ -120,7 +120,7 @@ function FilmographyPage() {
                     className="video-desc"
                     style={{
                       color: 'white',
-                      fontSize: '18px',
+                      fontSize: '14px', // Reduced from 18px
                       marginBottom: '15px'
                     }}
                   >
@@ -166,7 +166,7 @@ function FilmographyPage() {
                     <div
                       style={{
                         color: 'white',
-                        fontSize: '16px',
+                        fontSize: '14px', // Reduced from 16px
                         marginTop: '15px',
                         lineHeight: '1.5em'
                       }}
@@ -193,7 +193,7 @@ function FilmographyPage() {
                     <div
                       style={{
                         color: 'white',
-                        fontSize: '16px',
+                        fontSize: '14px', // Reduced from 16px
                         marginTop: '15px',
                         lineHeight: '1.5em'
                       }}
@@ -267,7 +267,7 @@ function FilmographyPage() {
                       <div
                         style={{
                           color: 'white',
-                          fontSize: '16px',
+                          fontSize: '14px', // Reduced from 16px
                           marginTop: '15px',
                           lineHeight: '1.5em'
                         }}
