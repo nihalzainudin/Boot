@@ -107,7 +107,7 @@ function App() {
                   <>
                     <Nav.Link as={Link} to="/SOUND">SOUND</Nav.Link>
                     <Nav.Link as={Link} to="/FILMOGRAPHY">FILMOGRAPHY</Nav.Link>
-                    <Nav.Link as={Link} to="/PAINTINGS">PAINTINGS</Nav.Link>
+                    {/* <Nav.Link as={Link} to="/PAINTINGS">PAINTINGS</Nav.Link> */}
                   </>
                 )}
                 <Nav.Link as={Link} to="/CONTACT">CONTACT</Nav.Link>
@@ -170,79 +170,56 @@ function App() {
                   padding: '5px 0',
                   fontFamily: 'Glacial Indifference, sans-serif',
                   cursor: 'pointer',
-                  fontSize: '0.7rem' // reduced font size
+                  fontSize: '0.7rem'
                 }}
               >
                 PROJECTS
               </Nav.Link>
               {showProjectsSub && (
                 <div style={{ marginLeft: '15px' }}>
-                  <Nav.Link
-                    as={Link}
-                    to="/SOUND"
-                    className="nav-option"
-                    style={{
-                      color: textColor,
-                      padding: '2px 0',
-                      fontFamily: 'Glacial Indifference, sans-serif',
-                      fontSize: '0.7rem'  // reduced font size
-                    }}
-                  >
+                  <Nav.Link as={Link} to="/SOUND" className="nav-option" style={{
+                    color: textColor,
+                    padding: '2px 0',
+                    fontFamily: 'Glacial Indifference, sans-serif',
+                    fontSize: '0.7rem'
+                  }}>
                     SOUND
                   </Nav.Link>
-                  <Nav.Link
-                    as={Link}
-                    to="/FILMOGRAPHY"
-                    className="nav-option"
-                    style={{
-                      color: textColor,
-                      padding: '2px 0',
-                      fontFamily: 'Glacial Indifference, sans-serif',
-                      fontSize: '0.7rem'  // reduced font size
-                    }}
-                  >
+                  <Nav.Link as={Link} to="/FILMOGRAPHY" className="nav-option" style={{
+                    color: textColor,
+                    padding: '2px 0',
+                    fontFamily: 'Glacial Indifference, sans-serif',
+                    fontSize: '0.7rem'
+                  }}>
                     FILMOGRAPHY
                   </Nav.Link>
-                  <Nav.Link
-                    as={Link}
-                    to="/PAINTINGS"
-                    className="nav-option"
-                    style={{
-                      color: textColor,
-                      padding: '2px 0',
-                      fontFamily: 'Glacial Indifference, sans-serif',
-                      fontSize: '0.7rem'  // reduced font size
-                    }}
-                  >
+                  {/*
+                  <Nav.Link as={Link} to="/PAINTINGS" className="nav-option" style={{
+                    color: textColor,
+                    padding: '2px 0',
+                    fontFamily: 'Glacial Indifference, sans-serif',
+                    fontSize: '0.7rem'
+                  }}>
                     PAINTINGS
                   </Nav.Link>
+                  */}
                 </div>
               )}
-              <Nav.Link
-                as={Link}
-                to="/CONTACT"
-                className="nav-option"
-                style={{
-                  color: textColor,
-                  padding: '5px 0',
-                  fontFamily: 'Glacial Indifference, sans-serif',
-                  fontSize: '0.7rem'  // reduced font size
-                }}
-              >
+              <Nav.Link as={Link} to="/CONTACT" className="nav-option" style={{
+                color: textColor,
+                padding: '5px 0',
+                fontFamily: 'Glacial Indifference, sans-serif',
+                fontSize: '0.7rem'
+              }}>
                 CONTACT
               </Nav.Link>
-              <Nav.Link
-                as={Link}
-                to="/ABOUT"
-                className="nav-option"
-                style={{
-                  color: textColor,
-                  fontWeight: 'lighter',
-                  padding: '5px 0',
-                  fontFamily: 'Glacial Indifference, sans-serif',
-                  fontSize: '0.7rem'  // reduced font size
-                }}
-              >
+              <Nav.Link as={Link} to="/ABOUT" className="nav-option" style={{
+                color: textColor,
+                fontWeight: 'lighter',
+                padding: '5px 0',
+                fontFamily: 'Glacial Indifference, sans-serif',
+                fontSize: '0.7rem'
+              }}>
                 ABOUT
               </Nav.Link>
             </Nav>
