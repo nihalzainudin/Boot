@@ -59,7 +59,7 @@ function FilmographyPage() {
       const boldPart = parts[parts.length - 1];
       return (
         <>
-          {nonBold} - <strong style={{ fontWeight: '700' }}>{boldPart}</strong>
+          {nonBold} - <em><strong style={{ fontWeight: '700' }}>{boldPart}</strong></em>
         </>
       );
     }
@@ -158,7 +158,7 @@ function FilmographyPage() {
                     className="video-desc"
                     style={{
                       color: 'white',
-                      fontSize: '14px',
+                      fontSize: '16px',
                       marginBottom: '15px'
                     }}
                   >
@@ -212,6 +212,7 @@ function FilmographyPage() {
               <>
                 {selectedVideo.description.includes("Lives of Hastings") ? (
                   <>
+                    {/* Video 1 */}
                     <Row>
                       <Col>
                         <iframe
@@ -233,14 +234,78 @@ function FilmographyPage() {
                             fontSize: '13px',
                             marginTop: '15px',
                             lineHeight: '1.5em',
-                            textAlign: 'justify'  // added justification
+                            textAlign: 'justify'
                           }}
                         >
-                          This project explores homelessness and drug use in Vancouver's Hastings area through a documentary-style approach. It combines visual storytelling with raw, unfiltered photography, capturing candid moments, the stark textures of the urban environment, and the deeply human expressions of those living within it.
+                          This project explores homelessness and drug use in Vancouver's Hastings area through a documentary-style approach. It combines visual storytelling with raw, unfiltered photography, capturing candid moments, the stark textures of the urban environment, and the deeply human expressions of those living within it. Where interviews or personal stories were incorporated, they were approached with respect and a commitment to authenticity. These conversations, alongside environmental portraits, were conducted with a non-intrusive approach. Street photography techniques, such as the use of natural light, high-contrast black-and-white shots, or slow shutter speeds to capture the blur of movement, were employed to immerse the viewer in the raw reality of the environment.
                         </div>
                       </Col>
                     </Row>
-                    {/* Additional content for Lives of Hastings, if any */}
+                    
+                    {/* Video 2 */}
+                    <Row style={{ marginTop: '30px' }}>
+                      <Col>
+                        <iframe
+                          src="https://drive.google.com/file/d/1npab5CPw4XkKsAsq71KmVE3sqnzK6M6X/preview"
+                          width="100%"
+                          height="400"
+                          allow="autoplay; fullscreen"
+                          allowFullScreen
+                          sandbox="allow-same-origin allow-scripts allow-fullscreen"
+                          style={{ border: 'none' }}
+                        ></iframe>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col>
+                        <div
+                          style={{
+                            color: 'white',
+                            fontSize: '13px',
+                            marginTop: '15px',
+                            lineHeight: '1.5em',
+                            textAlign: 'justify'
+                          }}
+                        >
+                          <p>A hybrid approach, merging the evocative nature of double exposure photography with dynamic video installation. The visual component employs double exposure techniques, layering imagery to create a sense of fragmented reality and emotional depth. To further enhance the viewer's immersion, a single video sequence is presented across nine synchronized cubes, arranged within a single screen. This multi-faceted display elongates the perception of depth and distorts spatial awareness, drawing the viewer into the work's intricate layers.</p>
+                          <p>The intended outcome of this project is to challenge existing perceptions, to humanize those who are often dismissed as 'unhoused,' and to document the profound impact of addiction in Vancouver’s Downtown Eastside.</p>
+                        </div>
+                      </Col>
+                    </Row>
+                    
+                    {/* Photos Grid: 4 photos arranged 2 per row */}
+                    <Row style={{ marginTop: '30px' }}>
+                      <Col xs={6}>
+                        <img
+                          src="/images/1.jpg"
+                          alt="Hastings photo 1"
+                          style={{ width: '100%', display: 'block', marginBottom: '20px' }}
+                        />
+                      </Col>
+                      <Col xs={6}>
+                        <img
+                          src="/images/2.jpg"
+                          alt="Hastings photo 2"
+                          style={{ width: '100%', display: 'block', marginBottom: '20px' }}
+                        />
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col xs={6}>
+                        <img
+                          src="/images/3.jpg"
+                          alt="Hastings photo 3"
+                          style={{ width: '100%', display: 'block', marginBottom: '20px' }}
+                        />
+                      </Col>
+                      <Col xs={6}>
+                        <img
+                          src="/images/4.jpg"
+                          alt="Hastings photo 4"
+                          style={{ width: '100%', display: 'block', marginBottom: '20px' }}
+                        />
+                      </Col>
+                    </Row>
                   </>
                 ) : (
                   <>
