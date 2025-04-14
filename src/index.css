@@ -138,6 +138,10 @@ html, body {
   .filmography-page-container {
     padding-top: 50px !important; /* Adjust this value as needed */
   }
+
+  .mobile-nav .nav-option {
+    font-size: 0.5rem !important;
+  }
 }
 
 /* Mobile adjustments for PaintingsPage elements */

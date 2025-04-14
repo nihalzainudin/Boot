@@ -170,7 +170,7 @@ function App() {
                   padding: '5px 0',
                   fontFamily: 'Glacial Indifference, sans-serif',
                   cursor: 'pointer',
-                  fontSize: '0.8rem' // reduced font size
+                  fontSize: '0.7rem' // reduced font size
                 }}
               >
                 PROJECTS
@@ -185,7 +185,7 @@ function App() {
                       color: textColor,
                       padding: '2px 0',
                       fontFamily: 'Glacial Indifference, sans-serif',
-                      fontSize: '0.8rem'  // reduced font size
+                      fontSize: '0.7rem'  // reduced font size
                     }}
                   >
                     SOUND
@@ -198,7 +198,7 @@ function App() {
                       color: textColor,
                       padding: '2px 0',
                       fontFamily: 'Glacial Indifference, sans-serif',
-                      fontSize: '0.8rem'  // reduced font size
+                      fontSize: '0.7rem'  // reduced font size
                     }}
                   >
                     FILMOGRAPHY
@@ -211,7 +211,7 @@ function App() {
                       color: textColor,
                       padding: '2px 0',
                       fontFamily: 'Glacial Indifference, sans-serif',
-                      fontSize: '0.8rem'  // reduced font size
+                      fontSize: '0.7rem'  // reduced font size
                     }}
                   >
                     PAINTINGS
@@ -226,7 +226,7 @@ function App() {
                   color: textColor,
                   padding: '5px 0',
                   fontFamily: 'Glacial Indifference, sans-serif',
-                  fontSize: '0.8rem'  // reduced font size
+                  fontSize: '0.7rem'  // reduced font size
                 }}
               >
                 CONTACT
@@ -240,7 +240,7 @@ function App() {
                   fontWeight: 'lighter',
                   padding: '5px 0',
                   fontFamily: 'Glacial Indifference, sans-serif',
-                  fontSize: '0.8rem'  // reduced font size
+                  fontSize: '0.7rem'  // reduced font size
                 }}
               >
                 ABOUT

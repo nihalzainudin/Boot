@@ -118,7 +118,7 @@ function ContactPage() {
       <Row>
         <Col>
           <div style={{ color: 'white', padding: '0 15px', fontFamily: 'Garamond' }}>
-            <p style={{ marginTop: '15px', fontSize: '100%', textAlign: 'left' }}>
+            <p style={{ marginTop: '15px', fontSize: '85%', textAlign: 'left' }}>
               Get in touch so we can work together.
             </p>
           </div>
@@ -131,7 +131,7 @@ function ContactPage() {
               <Row>
                 <Col md={6}>
                   <Form.Group controlId="contactFirstName" className="mb-3">
-                    <Form.Label style={{ color: 'white' }}>First Name *</Form.Label>
+                    <Form.Label style={{ color: 'white', fontSize: '85%' }}>First Name *</Form.Label>
                     <Form.Control
                       type="text"
                       placeholder="Enter first name"
@@ -142,7 +142,7 @@ function ContactPage() {
                     />
                   </Form.Group>
                   <Form.Group controlId="contactLastName" className="mb-3">
-                    <Form.Label style={{ color: 'white' }}>Last Name</Form.Label>
+                    <Form.Label style={{ color: 'white', fontSize: '85%' }}>Last Name</Form.Label>
                     <Form.Control
                       type="text"
                       placeholder="Enter last name"
@@ -153,7 +153,7 @@ function ContactPage() {
                     />
                   </Form.Group>
                   <Form.Group controlId="contactEmail" className="mb-3">
-                    <Form.Label style={{ color: 'white' }}>Email Address *</Form.Label>
+                    <Form.Label style={{ color: 'white', fontSize: '85%' }}>Email Address *</Form.Label>
                     <Form.Control
                       type="email"
                       placeholder="Enter email"
@@ -166,7 +166,7 @@ function ContactPage() {
                 </Col>
                 <Col md={6}>
                   <Form.Group controlId="contactMessage" className="mb-3">
-                    <Form.Label style={{ color: 'white' }}>Message *</Form.Label>
+                    <Form.Label style={{ color: 'white', fontSize: '85%' }}>Message *</Form.Label>
                     <Form.Control
                       as="textarea"
                       placeholder="Your message"
