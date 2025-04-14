@@ -59,7 +59,7 @@ function FilmographyPage() {
       const boldPart = parts[parts.length - 1];
       return (
         <>
-          {nonBold} - <em><strong style={{ fontWeight: '700' }}>{boldPart}</strong></em>
+          {nonBold} - <em><strong style={{ fontWeight: '700', fontSize: '12px' }}>{boldPart}</strong></em>
         </>
       );
     }
