@@ -113,8 +113,8 @@ html, body {
 
   .slide-panel {
     width: 85% !important;        /* Wider panel for mobile video player */
-    top: 165px !important;          /* Reduced gap above the 'Filmography' title */
-    height: calc(100% - 165px) !important;
+    top: 135px !important;          /* Reduced gap above the 'Filmography' title */
+    height: calc(100% - 135px) !important;
   }
 
   .video-desc {
@@ -136,7 +136,7 @@ html, body {
   }
 
   .filmography-page-container {
-    padding-top: 50px !important; /* Adjust this value as needed */
+    padding-top: 20px !important; /* Adjust this value as needed */
   }
 
   .mobile-nav .nav-option {
