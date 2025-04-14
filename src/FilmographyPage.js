@@ -54,10 +54,12 @@ function FilmographyPage() {
   const formatTitle = (title) => {
     if (title.includes("Video coming soon")) {
       const parts = title.split(" - ");
-      // Assume the last part is "Video coming soon"
+      // Join all segments except the last one
+      const nonBold = parts.slice(0, parts.length - 1).join(" - ");
+      const boldPart = parts[parts.length - 1];
       return (
         <>
-          {parts[0]} - <strong style={{ fontWeight: '700' }}>{parts.slice(1).join(" - ")}</strong>
+          {nonBold} - <strong style={{ fontWeight: '700' }}>{boldPart}</strong>
         </>
       );
     }
